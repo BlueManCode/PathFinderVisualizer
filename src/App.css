@@ -1,0 +1,96 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow:  hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-evenly;
+}
+
+td {
+  width: 23px;
+  height: 23px;
+  border-right: 1px solid;
+  border-top: 1px solid;
+}
+
+td:first-child {
+  border-left: 1px solid;
+  border-top: 1px solid;
+} 
+
+tr:last-child {
+  border-bottom: 1px solid;
+}
+
+.row  {
+  display: flex;
+}
+
+.start  {
+  background: rgb(13, 218, 13) !important;
+  border-color: rgb(13, 218, 13) !important;
+}
+
+.end {
+  background: rgb(255, 42, 42) !important;
+  border-color: rgb(255, 42, 42) !important;
+}
+
+.visited {
+  animation-duration: 1s;
+  animation-name: visiting;
+  animation-fill-mode: forwards;
+}
+
+@keyframes visiting {
+  0% {
+    transform: scale(0);
+    background: rgb(8, 141, 218);
+    border-radius: 150px;
+  }
+
+  50% {
+    transform: scale(1.2);
+    background: #09c586;
+  }
+
+  100% {
+    transform: scale(1);
+    background: #40CEE3;
+    border-radius: 0px;
+    border-color: white;
+  }
+}
+
+
+.shortest {
+  background: #FFFE6A;
+  border-color: #FFFE6A;
+}
+
+.wall {
+  animation-duration: 500ms;
+  animation-name: wall;
+  animation-fill-mode: forwards;
+}
+
+@keyframes wall {
+  from {
+    transform: scale(0.1);
+    background: grey;
+    border-color: grey;
+    border-radius: 300px;
+  }
+
+  to {
+    transform: scale(1);
+    background: grey;
+    border-color: grey;
+    border-radius: 0px;
+  }
+}
