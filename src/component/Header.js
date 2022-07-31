@@ -4,7 +4,7 @@ import './Header.css'
 
 const Header = ({algorithms, setalgorithmSelected, isAnimating, children}) => {
 
-  const [isOpen, setisOpen] = useState(true)
+  const [isOpen, setisOpen] = useState(false)
   const [items, setitems] = useState(algorithms)
 
   return (
