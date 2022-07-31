@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 td {
@@ -93,4 +93,20 @@ tr:last-child {
     border-color: grey;
     border-radius: 0px;
   }
+}
+
+.button {
+  background: #1ABC9C;
+  padding: 10px;
+  border-radius: 5px;
+  border-style: none;
+  color: white;
+  font-weight: bolder;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.disabled {
+  background: red !important;
+  cursor: not-allowed;
 }

@@ -1,20 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
+import DropDownModel from './DropDownModel.js'
 import './Header.css'
 
-const Header = ({algorithms, setalgorithmSelected}) => {
+const Header = ({algorithms, setalgorithmSelected, isAnimating, children}) => {
 
-  const handleChange = (e) => {
-    setalgorithmSelected(e.target.value)
-  }
+  const [isOpen, setisOpen] = useState(true)
+  const [items, setitems] = useState(algorithms)
 
   return (
-    <div className='header_container'>
-      <label>Choose an algorithm</label>
-      <select onChange={handleChange}>
-        <option value={algorithms.DIJKSTRA}>{algorithms.DIJKSTRA}</option>
-        <option value={algorithms.BFS}>{algorithms.BFS}</option>
-        <option value={algorithms.DFS}>{algorithms.DFS}</option>
-      </select>
+    <div className='header-container'>
+      <div>
+        <DropDownModel isOpen={isOpen} setisOpen={setisOpen} items={items} setalgorithmSelected={setalgorithmSelected}/>
+      </div>
+      {children}
     </div>
   )
 }

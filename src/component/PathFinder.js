@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Node from './Node.js'
 import Header from './Header.js'
-import Info from './Info.js'
 import { Dijkstra } from '../algorithms/dijkstra.js'
 import { BFS } from '../algorithms/bfs.js'
 import { DFS } from '../algorithms/dfs.js'
@@ -181,12 +180,11 @@ const PathFinder = ({gridRow, gridCol}) => {
   return (
     <div className='container'>
       <div>
-        <Header algorithms={Algorithms} setalgorithmSelected={setalgorithmSelected}/>
-        <Info>
-          <button onClick={handleReset} disabled={isAnimating}> Clear Grid </button>
-          <button onClick={handleVisualization} disabled={isAnimating}> Run {algorithmSelected} </button>
-          <button onClick={generateMazeDivision} disabled={isAnimating}> Generate Maze </button>
-        </Info>
+        <Header algorithms={Algorithms} setalgorithmSelected={setalgorithmSelected} isAnimating={isAnimating}>
+            <button className={`button ${isAnimating ? "disabled" : ""}`} onClick={handleVisualization} disabled={isAnimating}> Run {algorithmSelected} </button>
+            <button className={`button ${isAnimating ? "disabled" : ""}`} onClick={generateMazeDivision} disabled={isAnimating}> Generate Maze </button>
+            <button className={`button ${isAnimating ? "disabled" : ""}`} onClick={handleReset} disabled={isAnimating}> Clear Grid </button>
+        </Header>
       </div>
       <table className="grid">
         <tbody>

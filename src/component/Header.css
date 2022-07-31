@@ -2,5 +2,26 @@
   width: 100vw;
   height: 60px;
   background: rgb(24, 33, 81);
-  color: white
+  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.model {
+  position: fixed;
+  background: black;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.model-items {
+  width: 100%;
+  padding: 10px 30px 10px 10px;
+}
+
+.model-items:hover {
+  cursor: pointer;
+  background: gray
 }
